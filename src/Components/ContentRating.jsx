@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import './ContentRating.css';
 
@@ -13,30 +12,30 @@ class ContentRating extends Component {
                 likes: prevState + 1
             }));
         },
-
         handleDislike:() => {
             this.setState((prevState) => ({
                 dislikes: prevState + 1
             }));
         }
-    };
-    
+    };    
   }
   render() {
     return (
-     <div className='content-rating'>
-        <p>
-            ---Add text here---
-        </p>    
+    <>
+    <h1>Text Content Rating</h1>
+    <div className='content-rating'>
+        <p>Text</p>    
         <div className='rating-buttons'>
+
             <button className='like-button' onClick={this.state.handleLike}>
                 Like ({this.state.likes})
             </button>
-            <button className='like-button' onClick={this.state.handleDislike}>
+            <button className="dislike-button" onClick={this.state.handleDislike}>
                 Dislike ({this.state.dislikes})
             </button>            
         </div>
     </div>
+    </>
     );
   }
 }
